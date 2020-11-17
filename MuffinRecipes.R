@@ -5,6 +5,10 @@ library(xml2)
 library(magrittr)
 library(stringi)
 
+#################
+### Webscraping
+#################
+
 # Function for scaping links on each page of seach results
 LinkExtractor <- function(nodes){
   links <- map_chr(c(1:length(nodes)),~nodes[.x] %>%
@@ -74,10 +78,15 @@ measurementKeyWords_plural <- "cups|Cups|tsps|Tsps|TSPs|TSPS|teaspoons|Teaspoons
 IngredientSplitter <- function(string){
   string_cleaned <- stri_trans_general(string,"latin-ascii")
   result <- list(
-    value =str_extract(string_cleaned,"[0-9/\\s]+") %>% 
-      FractionConverter(),
+    value = if(str_detect(string_cleaned,"[0-9]")){
+      str_extract(string_cleaned,"[0-9/\\s]+") %>% 
+        FractionConverter()
+    }else{
+      NA
+    },
     measure = if(str_detect(string_cleaned,measurementKeyWords_plural)){
-      str_extract(string_cleaned,measurementKeyWords_plural)
+      str_extract(string_cleaned,measurementKeyWords_plural) %>% 
+        str_sub(end=-2L)
     }else{
       if(str_detect(string_cleaned,measurementKeyWords_singular)){
         str_extract(string_cleaned,measurementKeyWords_singular)
@@ -94,7 +103,11 @@ IngredientSplitter <- function(string){
         if(str_detect(string_cleaned,"[0-9]+/[0-9]+")){
           str_split(string_cleaned,"[0-9/\\s]+[0-9]")
         }else{
-          str_split(string_cleaned,"[0-9]+") 
+          if(str_detect(string_cleaned,"[0-9]+")){
+            str_split(string_cleaned,"[0-9]+") 
+          }else{
+            list(c("",string_cleaned))
+          }
         }
       }
     },1) %>% 
@@ -186,3 +199,16 @@ RecipeScraper <- function(url){
 
 # Scape all recipes
 data <- map(links,RecipeScraper)
+
+#################
+### Data cleaning
+#################
+
+# Sort out non-muffin recipes
+flours <- "flour|Flour|muffin mix|cake mix|Cake Mix|baking mix|Baking Mix|quinoa|dough|panettone|meal"
+data_muffins <- data[which(map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours))))]
+
+# Scale all ingredients to 12 muffins
+for (i in c(1:length(data_muffins))){
+  data_muffins[[i]]$ingredients$value12 <- data_muffins[[i]]$ingredients$value * (12 / data_muffins[[i]]$servingSize)
+}
