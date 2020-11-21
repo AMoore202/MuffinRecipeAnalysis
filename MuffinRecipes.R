@@ -200,6 +200,10 @@ RecipeScraper <- function(url){
 # Scape all recipes
 data <- map(links,RecipeScraper)
 
+# Save data for easy retrieval
+saveRDS(data,"muffinData.rds")
+data <- readRDS("muffinData.rds")
+
 #################
 ### Data cleaning
 #################
@@ -208,7 +212,42 @@ data <- map(links,RecipeScraper)
 flours <- "flour|Flour|muffin mix|cake mix|Cake Mix|baking mix|Baking Mix|quinoa|dough|panettone|meal"
 data_muffins <- data[which(map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours))))]
 
-# Scale all ingredients to 12 muffins
 for (i in c(1:length(data_muffins))){
-  data_muffins[[i]]$ingredients$value12 <- data_muffins[[i]]$ingredients$value * (12 / data_muffins[[i]]$servingSize)
+  # Scale all ingredients to 12 muffins
+  data_muffins[[i]]$ingredients$value12 <- 
+    data_muffins[[i]]$ingredients$value * (12 / data_muffins[[i]]$servingSize)
+  
+  # Scale ingredients (as best possible) to teaspoons
+  data_muffins[[i]]$ingredients$value12Tsp <-
+    map_dbl(c(1:nrow(data_muffins[[i]]$ingredients)),~
+              case_when(
+                data_muffins[[i]]$ingredients$measure[.x] == "cup" ~ data_muffins[[i]]$ingredients$value12[.x] * 49,
+                data_muffins[[i]]$ingredients$measure[.x] == "tablespoon" ~ data_muffins[[i]]$ingredients$value12[.x] * 3,
+                data_muffins[[i]]$ingredients$measure[.x] == "teaspoon" ~ data_muffins[[i]]$ingredients$value12[.x],
+                data_muffins[[i]]$ingredients$measure[.x] %>% is.character() ~ data_muffins[[i]]$ingredients$value12[.x]
+                )
+              )
+  
+  # Create a single rating score
+  data_muffins[[i]]$score <- list(
+    rating = sum(
+      map_dbl(c(1:5),~ data_muffins[[i]]$ratings$rank[.x] * data_muffins[[i]]$ratings$votes[.x])
+    ) / sum(data_muffins[[i]]$ratings$votes),
+    # Create a value of number of votes
+    votes = sum(data_muffins[[i]]$ratings$votes)
+  )
 }
+
+#################
+### Analysis
+#################
+
+map(data_muffins,~.x$ingredients$ingredient) %>% 
+  unlist() %>% 
+  as.factor() %>% 
+  summary()
+
+
+
+
+
