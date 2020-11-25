@@ -238,14 +238,40 @@ for (i in c(1:length(data_muffins))){
   )
 }
 
+# Create flat ingredient table for easy exportation
+ingredientsTable <- map(data_muffins,~ .x$ingredients %>% 
+      mutate(
+        title = .x$title,
+        rating = .x$score$rating,
+        votes = .x$score$votes
+      )
+    ) %>% 
+  bind_rows()
+write_csv(ingredientsTable,"ingredientsTable.csv")
+
 #################
 ### Analysis
 #################
 
-map(data_muffins,~.x$ingredients$ingredient) %>% 
+# See the most common ingredients
+map(data_muffins,~ .x$ingredients$ingredient) %>% 
   unlist() %>% 
   as.factor() %>% 
   summary()
+
+map_dbl(data_muffins,~ .x$score$rating)
+
+data_muffins %>% 
+  {
+    tibble(
+      rating = map_dbl(.,~ .x$score$rating),
+      votes = map_dbl(.,~ .x$score$votes)
+    )
+  } %>% 
+  na.omit() %>% 
+  {
+    cor.test(.$rating,.$votes)
+  }
 
 
 
