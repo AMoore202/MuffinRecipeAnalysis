@@ -238,16 +238,16 @@ for (i in c(1:length(data_muffins))){
   )
 }
 
-# Create flat ingredient table for easy exportation
+# Create flat ingredient tables for Tableau practice
 ingredientsTable <- map(data_muffins,~ .x$ingredients %>% 
-      mutate(
-        title = .x$title,
-        rating = .x$score$rating,
-        votes = .x$score$votes
-      )
+      mutate(title = .x$title)
     ) %>% 
   bind_rows()
 write_csv(ingredientsTable,"ingredientsTable.csv")
+
+ratingsTable <- map_df(data_muffins,"score") %>% 
+          mutate(title = map_chr(data_muffins,"title"))
+write_csv(ratingsTable,"ratingsTable.csv")
 
 #################
 ### Analysis
