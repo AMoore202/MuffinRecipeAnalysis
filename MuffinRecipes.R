@@ -9,7 +9,7 @@ library(stringi)
 ### Webscraping
 #################
 
-# Function for scaping links on each page of seach results
+# Function for scraping links on each page of seach results
 LinkExtractor <- function(nodes){
   links <- map_chr(c(1:length(nodes)),~nodes[.x] %>%
                      html_node(".grid-card-image-container") %>%
@@ -70,13 +70,27 @@ FractionConverter <- function(string){
   }
 }
 
-# Strings of key words representing measurements
-measurementKeyWords_singular <- "cup|Cup|tsp|Tsp|TSP|teaspoon|Teaspoon|tbsp|Tbsp|TBSP|tablespoon|Tablespoon|ml|ML|milliliter|Milliliter|liter|Liter|MG|milligram|Milligram|gram|Gram|oz|OZ|ounce|Ounce|qrt|QRT|dash|Dash|pinch|Pinch|pint|Pint"
-measurementKeyWords_plural <- "cups|Cups|tsps|Tsps|TSPs|TSPS|teaspoons|Teaspoons|tbsps|Tbsps|TBSPs|TBSPS|tablespoons|Tablespoons|mls|MLs|MLS|milliliters|Milliliters|liters|Liters|mgs|Mgs|MGS|milligrams|Milligrams|grams|Grams|ozs|OZs|OZS|ounces|Ounces|qrts|QRTs|QRTS|dashes|Dashes|pinches|Pinches|pints|Pints"
+# Strings of key words representing measurements and preparations
+measurementKeyWords_singular <- "cup|Cup|tsp|Tsp|TSP|teaspoon|Teaspoon|tbsp|Tbsp|TBSP|tablespoon|Tablespoon|ml|ML|milliliter|Milliliter|liter|Liter|MG|milligram|Milligram|gram|Gram|\\soz|OZ|ounce|Ounce|qrt|QRT|dash|Dash|pinch|Pinch|pint|Pint|pound|Pound"
+measurementKeyWords_plural <- "cups|Cups|tsps|Tsps|TSPs|TSPS|teaspoons|Teaspoons|tbsps|Tbsps|TBSPs|TBSPS|tablespoons|Tablespoons|mls|MLs|MLS|milliliters|Milliliters|liters|Liters|mgs|Mgs|MGS|milligrams|Milligrams|grams|Grams|ozs|OZs|OZS|ounces|Ounces|qrts|QRTs|QRTS|dashes|Dashes|pinches|Pinches|pints|Pints|pounds|Pounds"
+preparationKeyWords <- "^sliced|^diced|^cubed|^chopped|^finely chopped|^minced|^divided|^melted|^softened|^warmed|^mashed|^ground|^finely ground|^freshly ground|^packed|^grated|^freshly grated|^zested|^lightly packed|^firmly packed|^shredded|^crumbled"
 
 # Function for splitting ingredients
 IngredientSplitter <- function(string){
-  string_cleaned <- stri_trans_general(string,"latin-ascii")
+  string_cleaned <- stri_trans_general(string,"latin-ascii") %>% 
+    str_remove("\\(Optional\\)") %>% 
+    str_trim()
+  ingredient_raw <- case_when(
+    str_detect(string_cleaned,"\\([0-9\\.]+\\s[A-Za-z]+\\)") ~ str_split(string_cleaned,"\\([0-9\\.]+\\s[A-Za-z]+\\)[\\s]+[A-Za-z]+"),
+    str_detect(string_cleaned,measurementKeyWords_plural) ~ str_split(string_cleaned,measurementKeyWords_plural),
+    str_detect(string_cleaned,measurementKeyWords_singular) ~ str_split(string_cleaned,measurementKeyWords_singular),
+    str_detect(string_cleaned,"[0-9]+/[0-9]+") ~ str_split(string_cleaned,"[0-9/\\s]+[0-9]"),
+    str_detect(string_cleaned,"[0-9]+") ~ str_split(string_cleaned,"[0-9]+"),
+    TRUE ~ list(c("",string_cleaned))
+  ) %>% 
+    extract2(1) %>% 
+    extract(2) %>% 
+    str_trim()
   result <- list(
     value = if(str_detect(string_cleaned,"[0-9]")){
       str_extract(string_cleaned,"[0-9/\\s]+") %>% 
@@ -84,40 +98,27 @@ IngredientSplitter <- function(string){
     }else{
       NA
     },
-    measure = if(str_detect(string_cleaned,measurementKeyWords_plural)){
-      str_extract(string_cleaned,measurementKeyWords_plural) %>% 
-        str_sub(end=-2L)
-    }else{
-      if(str_detect(string_cleaned,measurementKeyWords_singular)){
-        str_extract(string_cleaned,measurementKeyWords_singular)
-      }else{
-        NA
-      }
-    },
-    ingredient = extract2(if(str_detect(string_cleaned,measurementKeyWords_plural)){
-      str_split(string_cleaned,measurementKeyWords_plural)
-    }else{
-      if(str_detect(string_cleaned,measurementKeyWords_singular)){
-        str_split(string_cleaned,measurementKeyWords_singular)
-      }else{
-        if(str_detect(string_cleaned,"[0-9]+/[0-9]+")){
-          str_split(string_cleaned,"[0-9/\\s]+[0-9]")
-        }else{
-          if(str_detect(string_cleaned,"[0-9]+")){
-            str_split(string_cleaned,"[0-9]+") 
-          }else{
-            list(c("",string_cleaned))
-          }
-        }
-      }
-    },1) %>% 
-      extract(2) %>% 
-      str_trim()
+    measure = case_when(
+      str_detect(string_cleaned,"\\([0-9\\.]+\\s[A-Za-z]+\\)") ~ str_extract(string_cleaned,"\\([0-9\\.]+\\s[A-Za-z]+\\)\\s[A-Za-z]+"),
+      str_detect(string_cleaned,measurementKeyWords_plural) ~ str_extract(string_cleaned,measurementKeyWords_plural) %>% str_sub(end=-2L),
+      str_detect(string_cleaned,measurementKeyWords_singular) ~ str_extract(string_cleaned,measurementKeyWords_singular),
+      TRUE ~ NA_character_
+    ),
+    ingredient = case_when(
+      str_detect(ingredient_raw,",|\\s\\-\\s") ~ str_split_fixed(ingredient_raw,",|\\s\\-\\s",2) %>% extract(1) %>% str_trim(),
+      str_detect(ingredient_raw,preparationKeyWords) ~ str_split_fixed(ingredient_raw,preparationKeyWords,2) %>% extract(2) %>% str_trim(),
+      TRUE ~ ingredient_raw
+    ),
+    preparation = case_when(
+      str_detect(ingredient_raw,",|\\s\\-\\s") ~ str_split_fixed(ingredient_raw,",|\\s\\-\\s",2) %>% extract(2) %>% str_trim(),
+      str_detect(ingredient_raw,preparationKeyWords) ~ str_extract(ingredient_raw,preparationKeyWords),
+      TRUE ~ NA_character_
+    )
   )
   return(result)
 }
 
-# Function for scaping individual recipes
+# Function for scraping individual recipes
 RecipeScraper <- function(url){
   webpage <- read_html(url) %>% 
     html_node("body") %>% 
@@ -197,7 +198,26 @@ RecipeScraper <- function(url){
   return(data)
 }
 
-# Scape all recipes
+
+tempWebpage %>% 
+  html_node(".two-col-content-wrapper") %>% 
+  html_node(".recipe-content-container") %>% 
+  html_node(".recipe-shopper-wrapper") %>%
+  html_node("section") %>% 
+  html_node("fieldset") %>% 
+  html_node("ul") %>% 
+  html_nodes("li") %>% 
+  extract(2) %>% 
+  html_node("label") %>% 
+  html_node("span") %>% 
+  html_node("span") %>% 
+  html_text() %>% 
+  str_remove_all("\n") %>% 
+  str_trim() %>% 
+  IngredientSplitter()
+  
+
+# Scrape all recipes
 data <- map(links,RecipeScraper)
 
 # Save data for easy retrieval
@@ -238,6 +258,47 @@ for (i in c(1:length(data_muffins))){
   )
 }
 
+ingredientsVector <- map(data_muffins,~ .x$ingredients$ingredient) %>% 
+  unlist() %>% 
+  na.omit()
+
+ingredientPlurIndexTable <- ingredientsVector[str_detect(ingredientsVector,"s$")] %>% 
+  unique() %>% {
+    tibble(
+      plural = .,
+      singular = str_sub(.,end = -2L)
+    )
+  } %>% {
+    mutate(.,
+      toCheck = map_chr(.$plural, ~
+                      if_else(
+                        length(ingredientsVector[ingredientsVector == .x]) > length(ingredientsVector[ingredientsVector == str_sub(.x, end = -2L)]),
+                        str_sub(.x, end = -2L),
+                        .x
+                      )
+                      ),
+      changeTo = map_chr(.$plural, ~
+                        if_else(
+                          length(ingredientsVector[ingredientsVector == .x]) > length(ingredientsVector[ingredientsVector == str_sub(.x, end = -2L)]),
+                          .x,
+                          str_sub(.x, end = -2L)
+                        )
+      )
+    )
+  }
+
+PlurChanger <- function(ingredient){
+  if(str_detect(ingredient,ingredientPlurIndexTable$toCheck) %>% any()){
+    return(ingredientPlurIndexTable[str_detect(ingredient,ingredientPlurIndexTable$toCheck),4] %>% extract2(1) %>% extract(1))
+  }else{
+    return(ingredient)
+  }
+}
+
+for (i in c(750:760)){
+  data_muffins[[i]]$ingredients$ingredient <- map_chr(data_muffins[[i]]$ingredients$ingredient,PlurChanger)
+}
+
 # Create flat ingredient tables for Tableau practice
 ingredientsTable <- map(data_muffins,~ .x$ingredients %>% 
       mutate(title = .x$title)
@@ -258,6 +319,12 @@ map(data_muffins,~ .x$ingredients$ingredient) %>%
   unlist() %>% 
   as.factor() %>% 
   summary()
+
+tibble(
+  ingredient = map(data_muffins,~ .x$ingredients$ingredient)
+)
+  
+
 
 map_dbl(data_muffins,~ .x$score$rating)
 
