@@ -198,25 +198,6 @@ RecipeScraper <- function(url){
   return(data)
 }
 
-
-tempWebpage %>% 
-  html_node(".two-col-content-wrapper") %>% 
-  html_node(".recipe-content-container") %>% 
-  html_node(".recipe-shopper-wrapper") %>%
-  html_node("section") %>% 
-  html_node("fieldset") %>% 
-  html_node("ul") %>% 
-  html_nodes("li") %>% 
-  extract(2) %>% 
-  html_node("label") %>% 
-  html_node("span") %>% 
-  html_node("span") %>% 
-  html_text() %>% 
-  str_remove_all("\n") %>% 
-  str_trim() %>% 
-  IngredientSplitter()
-  
-
 # Scrape all recipes
 data <- map(links,RecipeScraper)
 
@@ -228,9 +209,12 @@ data <- readRDS("muffinData.rds")
 ### Data cleaning
 #################
 
-# Sort out non-muffin recipes
+# Sort out non-muffin recipes and English muffin recipes
 flours <- "flour|Flour|muffin mix|cake mix|Cake Mix|baking mix|Baking Mix|quinoa|dough|panettone|meal"
-data_muffins <- data[which(map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours))))]
+data_muffins <- data[map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours)))] %>% length()
+data_muffins <- data[map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))]
+
+tibble(title = map_chr(data_muffins,"title"),check = map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))) %>% View()
 
 for (i in c(1:length(data_muffins))){
   # Scale all ingredients to 12 muffins
@@ -258,10 +242,13 @@ for (i in c(1:length(data_muffins))){
   )
 }
 
+# Create vector of ingredients
 ingredientsVector <- map(data_muffins,~ .x$ingredients$ingredient) %>% 
   unlist() %>% 
   na.omit()
 
+# Create index table to determine whether the plural or singular form of an ingredients
+# should be used for standardization
 ingredientPlurIndexTable <- ingredientsVector[str_detect(ingredientsVector,"s$")] %>% 
   unique() %>% {
     tibble(
@@ -276,7 +263,9 @@ ingredientPlurIndexTable <- ingredientsVector[str_detect(ingredientsVector,"s$")
                         str_sub(.x, end = -2L),
                         .x
                       )
-                      ),
+                      ) %>% 
+        {str_c("^", ., "$")}
+        ,
       changeTo = map_chr(.$plural, ~
                         if_else(
                           length(ingredientsVector[ingredientsVector == .x]) > length(ingredientsVector[ingredientsVector == str_sub(.x, end = -2L)]),
@@ -287,6 +276,7 @@ ingredientPlurIndexTable <- ingredientsVector[str_detect(ingredientsVector,"s$")
     )
   }
 
+# Function for changing singular to plural and vice-versa
 PlurChanger <- function(ingredient){
   if(str_detect(ingredient,ingredientPlurIndexTable$toCheck) %>% any()){
     return(ingredientPlurIndexTable[str_detect(ingredient,ingredientPlurIndexTable$toCheck),4] %>% extract2(1) %>% extract(1))
@@ -295,7 +285,8 @@ PlurChanger <- function(ingredient){
   }
 }
 
-for (i in c(750:760)){
+# standardize ingredient names
+for (i in c(1:length(data_muffins))){
   data_muffins[[i]]$ingredients$ingredient <- map_chr(data_muffins[[i]]$ingredients$ingredient,PlurChanger)
 }
 
@@ -325,22 +316,12 @@ tibble(
 )
   
 
+map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degrees[\\s]+F") %>% na.omit()) %>% 
+  map_dbl(length)
 
-map_dbl(data_muffins,~ .x$score$rating)
+map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degre[es]+") %>% na.omit()) %>% 
+  map_dbl(length) %>% as.factor() %>% summary()
 
-data_muffins %>% 
-  {
-    tibble(
-      rating = map_dbl(.,~ .x$score$rating),
-      votes = map_dbl(.,~ .x$score$votes)
-    )
-  } %>% 
-  na.omit() %>% 
-  {
-    cor.test(.$rating,.$votes)
-  }
-
-
-
-
+map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degre[es]+") %>% na.omit()) %>% 
+  map_dbl(length) %>% {tibble(title = map_chr(data_muffins,"title"),instances = .)} %>% View()
 
