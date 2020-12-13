@@ -209,12 +209,11 @@ data <- readRDS("muffinData.rds")
 ### Data cleaning
 #################
 
-# Sort out non-muffin recipes and English muffin recipes
+# Sort out non-muffin recipes, including cupcakes and English muffin recipes
 flours <- "flour|Flour|muffin mix|cake mix|Cake Mix|baking mix|Baking Mix|quinoa|dough|panettone|meal"
-data_muffins <- data[map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours)))] %>% length()
-data_muffins <- data[map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))]
-
-tibble(title = map_chr(data_muffins,"title"),check = map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))) %>% View()
+data_muffins <- data[map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours)))]
+data_muffins <- data_muffins[map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))]
+data_muffins <- data_muffins[!map_lgl(data_muffins,~str_detect(.x$title,"cake|Cake") & !str_detect(.x$title,"muffin|Muffin"))]
 
 for (i in c(1:length(data_muffins))){
   # Scale all ingredients to 12 muffins
@@ -316,12 +315,27 @@ tibble(
 )
   
 
-map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degrees[\\s]+F") %>% na.omit()) %>% 
-  map_dbl(length)
+map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degrees[\\s]+F") %>% na.omit()) 
 
-map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degre[es]+") %>% na.omit()) %>% 
+map(data_muffins,~ .x$instructions %>% str_detect("Bake|bake") %>% na.omit()) %>% 
   map_dbl(length) %>% as.factor() %>% summary()
 
 map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degre[es]+") %>% na.omit()) %>% 
-  map_dbl(length) %>% {tibble(title = map_chr(data_muffins,"title"),instances = .)} %>% View()
+  map_dbl(length) %>% {tibble(title = map_chr(data_muffins,"title"),instances = .)} %>% 
+  View()
+
+
+# Appendix
+
+# Helper function
+Indexer <- function(title,df){
+  return(
+    tibble(title = map_chr(df,"title")) %>% 
+    mutate(index = c(1:length(df))) %>% 
+    {extract(.,which(.$title == title),)} %>% 
+      extract2(1,2)
+  )
+}
+
+
 
