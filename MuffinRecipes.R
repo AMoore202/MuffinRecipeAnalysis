@@ -71,8 +71,8 @@ FractionConverter <- function(string){
 }
 
 # Strings of key words representing measurements and preparations
-measurementKeyWords_singular <- "cup|Cup|tsp|Tsp|TSP|teaspoon|Teaspoon|tbsp|Tbsp|TBSP|tablespoon|Tablespoon|ml|ML|milliliter|Milliliter|liter|Liter|MG|milligram|Milligram|gram|Gram|\\soz|OZ|ounce|Ounce|qrt|QRT|dash|Dash|pinch|Pinch|pint|Pint|pound|Pound"
-measurementKeyWords_plural <- "cups|Cups|tsps|Tsps|TSPs|TSPS|teaspoons|Teaspoons|tbsps|Tbsps|TBSPs|TBSPS|tablespoons|Tablespoons|mls|MLs|MLS|milliliters|Milliliters|liters|Liters|mgs|Mgs|MGS|milligrams|Milligrams|grams|Grams|ozs|OZs|OZS|ounces|Ounces|qrts|QRTs|QRTS|dashes|Dashes|pinches|Pinches|pints|Pints|pounds|Pounds"
+measurementKeyWords_singular <- "cup|Cup|tsp|Tsp|TSP|teaspoon|Teaspoon|tbsp|Tbsp|TBSP|tablespoon|Tablespoon|ml|ML|milliliter|Milliliter|liter|Liter|MG|milligram|Milligram|gram|Gram|\\soz|OZ|ounce|Ounce|Quart|quart|qrt|QRT|dash|Dash|pinch|Pinch|pint|Pint|pound|Pound"
+measurementKeyWords_plural <- "cups|Cups|tsps|Tsps|TSPs|TSPS|teaspoons|Teaspoons|tbsps|Tbsps|TBSPs|TBSPS|tablespoons|Tablespoons|mls|MLs|MLS|milliliters|Milliliters|liters|Liters|mgs|Mgs|MGS|milligrams|Milligrams|grams|Grams|ozs|OZs|OZS|ounces|Ounces|qrts|QRTs|QRTS|Quart|quart|dashes|Dashes|pinches|Pinches|pints|Pints|pounds|Pounds"
 preparationKeyWords <- "^sliced|^diced|^cubed|^chopped|^finely chopped|^minced|^divided|^melted|^softened|^warmed|^mashed|^ground|^finely ground|^freshly ground|^packed|^grated|^freshly grated|^zested|^lightly packed|^firmly packed|^shredded|^crumbled"
 
 # Function for splitting ingredients
@@ -212,8 +212,54 @@ data <- readRDS("muffinData.rds")
 # Sort out non-muffin recipes, including cupcakes and English muffin recipes
 flours <- "flour|Flour|muffin mix|cake mix|Cake Mix|baking mix|Baking Mix|quinoa|dough|panettone|meal"
 data_muffins <- data[map_lgl(data,~any(str_detect(.x$ingredients$ingredient,flours)))]
-data_muffins <- data_muffins[map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish"))]
+data_muffins <- data_muffins[map_lgl(data_muffins,~!str_detect(.x$title,"[:print:]+[Ee]nglish[:print:]+|[Ee]nglish[:print:]+|[:print:]+[Ee]nglish|Crumpet|Crumpet|Yorkshire Pudding"))]
 data_muffins <- data_muffins[!map_lgl(data_muffins,~str_detect(.x$title,"cake|Cake") & !str_detect(.x$title,"muffin|Muffin"))]
+
+# Function for extracting bake times
+BakeTimeExtractor <- function(instructions){
+  if(any(str_detect(instructions,"[Bb]ake[^\\.]+[0-9\\-\\s]+[\\s]+minutes|[Bb]ake[^\\.][0-9]+[\\s]+to[\\s]+[0-9]+[\\s]+minutes"))){
+    instructionClean <- str_extract(instructions,"[Bb]ake[^\\.]+[0-9\\-\\s]+[\\s]+minutes|[Bb]ake[^\\.][0-9]+[\\s]+to[\\s]+[0-9]+[\\s]+minutes") %>% 
+      na.omit() %>% 
+      {extract(.,length(.))}
+    result <- if(str_detect(instructionClean,"[0-9]+[\\s]+to[\\s]+[0-9]+")){
+      str_extract_all(instructionClean,"[0-9]+") %>% 
+        extract2(1) %>% 
+        as.character() %>% 
+        as.numeric() %>% {
+          list(
+            time = (.[1] + .[2]) / 2,
+            lowerBound = .[1],
+            upperBound = .[2]
+          )
+        }
+    }else{
+      if(str_detect(instructionClean,"[0-9]+")){
+        str_extract(instructionClean,"[0-9]+") %>% 
+          as.character() %>% 
+          as.numeric() %>% {
+            list(
+              time = .,
+              lowerBound = NA,
+              upperBound = NA
+            ) 
+          }
+      }else{
+        list(
+          time = NA,
+          lowerBound = NA,
+          upperBound = NA
+        )
+      }
+    }
+  }else{
+    result <- list(
+      time = NA,
+      lowerBound = NA,
+      upperBound = NA
+    )
+  }
+  return(result)
+}
 
 for (i in c(1:length(data_muffins))){
   # Scale all ingredients to 12 muffins
@@ -238,6 +284,27 @@ for (i in c(1:length(data_muffins))){
     ) / sum(data_muffins[[i]]$ratings$votes),
     # Create a value of number of votes
     votes = sum(data_muffins[[i]]$ratings$votes)
+  )
+  
+  # Stats for baking
+  data_muffins[[i]]$bakeMethod <- list(
+    temperature = data_muffins[[i]]$instructions %>% 
+      str_extract("[0-9]+[\\s]+degrees[\\s]+F") %>% {
+        if(all(map_lgl(.,is.na))){
+          NA_integer_
+        }else{
+          na.omit(.)
+        }
+      } %>% 
+      {extract(.,length(.))} %>% 
+      str_extract("[0-9]+") %>% 
+      as.character() %>% 
+      as.numeric(),
+    time = data_muffins[[i]]$instructions %>% 
+      str_extract("[Bb]ake[^\\.]+[0-9\\-\\s]+[\\s]+minutes|[Bb]ake[^\\.][0-9]+[\\s]+to[\\s]+[0-9]+[\\s]+minutes") %>% 
+      na.omit() %>% 
+      {extract(.,length(.))} %>%
+      BakeTimeExtractor()
   )
 }
 
@@ -300,6 +367,13 @@ ratingsTable <- map_df(data_muffins,"score") %>%
           mutate(title = map_chr(data_muffins,"title"))
 write_csv(ratingsTable,"ratingsTable.csv")
 
+bakingTable <- map_df(data_muffins,~.x$bakeMethod$time) %>% 
+          mutate(
+            title = map_chr(data_muffins,"title"),
+            temperature = map_dbl(data_muffins,~.x$bakeMethod$temperature)
+            )
+write_csv(bakingTable,"bakingTable.csv")
+
 #################
 ### Analysis
 #################
@@ -309,20 +383,6 @@ map(data_muffins,~ .x$ingredients$ingredient) %>%
   unlist() %>% 
   as.factor() %>% 
   summary()
-
-tibble(
-  ingredient = map(data_muffins,~ .x$ingredients$ingredient)
-)
-  
-
-map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degrees[\\s]+F") %>% na.omit()) 
-
-map(data_muffins,~ .x$instructions %>% str_detect("Bake|bake") %>% na.omit()) %>% 
-  map_dbl(length) %>% as.factor() %>% summary()
-
-map(data_muffins,~ .x$instructions %>% str_extract("[0-9]+[\\s]+degre[es]+") %>% na.omit()) %>% 
-  map_dbl(length) %>% {tibble(title = map_chr(data_muffins,"title"),instances = .)} %>% 
-  View()
 
 
 # Appendix

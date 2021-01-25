@@ -1,0 +1,819 @@
+time,lowerBound,upperBound,title,temperature
+25,NA,NA,Aunt Norma's Rhubarb Muffins,350
+32.5,30,35,Vegan Banana Muffins,350
+17.5,15,20,Vegan Agave Cornbread Muffins,325
+20,NA,NA,Moist Banana Muffins,375
+19,18,20,Banana Crumb Muffins,375
+12.5,10,15,Banana Muffins II,350
+22.5,20,25,Zucchini-Chocolate Chip Muffins,350
+17.5,15,20,Classic Bran Muffins,375
+30,NA,NA,Chef John's Blueberry Muffins,375
+25,20,30,Quinoa Muffins,400
+11,10,12,Mini Pumpkin Butterscotch Muffins,350
+282.5,375,190,Morning Glory Muffins I,375
+17.5,15,20,Toddler Muffins,375
+22.5,20,25,Pumpkin Chocolate Chip Muffins,400
+32.5,30,35,Addictive Pumpkin Muffins,350
+25,NA,NA,Apple Pie Muffins,375
+13.5,12,15,Whole Wheat Sweet Potato Muffins,350
+22.5,20,25,To Die For Blueberry Muffins,400
+22.5,20,25,Double Chocolate Cherry Muffins,400
+285,375,195,Pumpkin Cream Cheese Muffins,375
+13.5,12,15,Corn Muffins,400
+17.5,15,20,Donut Muffins,375
+19,18,20,Zucchini Yogurt Multigrain Muffins,400
+27.5,25,30,Crab-Stuffed Corn Muffins,375
+22.5,20,25,Pumpkin Muffins II,350
+262.5,350,175,Aunt Blanche's Blueberry Muffins,350
+17.5,15,20,Low-Fat Blueberry Bran Muffins,375
+20,NA,NA,Easy Morning Glory Muffins,350
+12.5,10,15,Cream Cheese-Blueberry Muffins,350
+375,NA,NA,Blueberry Muffins II,375
+20,NA,NA,Apple Strudel Muffins,375
+20,NA,NA,Ultimate Banana Muffins,350
+302.5,400,205,Banana Oat Muffins,400
+25,NA,NA,Zucchini Raisin Muffins,350
+10.5,10,11,Chocolate Chip Mini Muffins,400
+17.5,15,20,Blueberry Orange Bran Muffin,375
+300,400,200,Basic Corn Muffins,400
+25,NA,NA,Brown Butter Pineapple Corn Muffins,375
+18,NA,NA,Kid Muffins,375
+22.5,20,25,Easy Pumpkin Muffins,350
+25,NA,NA,Cream Cheese Filled Pumpkin Muffins,350
+20,NA,NA,BBQ Pork-Stuffed Corn Muffins,400
+30,25,35,Pumpkin Muffins with Streusel Topping,350
+22.5,20,25,Hunnybunch's Special Apple Muffins,400
+300,400,200,Banana Yogurt Muffins,400
+15,NA,NA,Pistachio Muffins,375
+262.5,350,175,Bran Flax Muffins,350
+19,16,22,"Easy, Speedy Corn Muffins",400
+22.5,20,25,Blueberry Zucchini Muffins,350
+20,NA,NA,Moist Chocolate Muffins,400
+25,NA,NA,Chef John's Sweet Potato Muffins,350
+20,NA,NA,Roxie's Bran Muffins,400
+35,NA,NA,Vegan Blueberry Muffins with Applesauce,350
+11,NA,NA,Pumpkin Almond Mini Muffins,325
+20,NA,NA,Lemon Poppy Seed Muffins,350
+17.5,15,20,Autumn Muffins,375
+37.5,35,40,Pumpkin Apple Streusel Muffins,350
+25,NA,NA,Molasses Raisin Muffins,350
+16.5,15,18,Almond Poppy Seed Muffins,350
+30,NA,NA,Grandmother's Muffins,350
+17.5,15,20,Orange-Walnut Muffins,375
+25,20,30,Carrot and Cranberry Muffins,375
+22.5,20,25,Caribbean Banana Muffins,350
+20,NA,NA,Blueberry Pumpkin Muffins,400
+17.5,15,20,Whole Wheat Pumpkin-Applesauce Muffins,400
+22.5,20,25,Pumpkin Muffins with Cinnamon Streusel Topping,350
+22.5,20,25,Cranberry Pumpkin Muffins,400
+16.5,15,18,Health Nut Blueberry Muffins,350
+20,NA,NA,Whole Wheat Blueberry Muffins,400
+17.5,15,20,Lemony Poppy Seed Muffins,400
+22.5,20,25,Peach Cobbler Muffins,350
+25,NA,NA,Banana Muffins with a Crunch,350
+30,25,35,Quick Lemon Poppy Seed Muffins,350
+35,NA,NA,Spinach Cheddar Muffins,350
+17.5,15,20,Keto Low-Carb Lemon Poppy Seed Muffins,350
+400,NA,NA,Oat Bran Muffins,400
+15,NA,NA,Oat and Blueberry Muffins,400
+30,NA,NA,Healthy Sweet Potato Muffins,350
+20,NA,NA,Savory Zucchini Chard Muffins,400
+18,NA,NA,Pumpkin Wheat Honey Muffins,350
+25,NA,NA,Rhubarb Muffins,350
+17.5,15,20,Seminary Muffins,350
+17.5,15,20,Pumpkin Chip Muffins,400
+10,NA,NA,Easy Pepperoni Pizza Muffins,425
+20,NA,NA,Blueberry Cream Muffins,400
+35,30,40,Sarah's Banana Bread Muffins,350
+27.5,25,30,Easy Pumpkin Spice Muffins,375
+17.5,15,20,Blueberry Nut Muffins,425
+19,18,20,Healthier Banana Crumb Muffins,375
+19.5,17,22,Hearty Breakfast Muffins,375
+15,NA,NA,Pumpkin-Dark Chocolate Chip Muffins,400
+16,15,17,Raspberry Lemon Muffins,400
+20,18,22,Apple Muffins,400
+22.5,20,25,Streusel Topped Blueberry Muffins,375
+25,NA,NA,Mocha Chocolate Chip Banana Muffins,350
+15,14,16,Easy Banana Muffins,350
+30,NA,NA,Pumpkin Pie Muffins,330
+20,18,22,Whole Wheat Oatmeal Strawberry Blueberry Muffins,425
+30,NA,NA,Best of the Best Blueberry Muffins,375
+17,16,18,Chunky Monkey Muffins,350
+27.5,25,30,Valentine's Day Strawberry Muffins,350
+10,8,12,Monkey Bread Muffins,375
+22.5,20,25,Blueberry Muffins I,400
+17,NA,NA,Melt-In-Your-Mouth Blueberry Muffins,350
+302.5,400,205,Honey Bran Muffins,NA
+20,NA,NA,Healthier Bran Muffins,400
+15,NA,NA,Millet Muffins,400
+17,NA,NA,Whole30® Banana Bread Drop Muffins,350
+22.5,20,25,Chocolate Chip Muffins,400
+27.5,25,30,Banana Oat Muffins with Sour Cream,350
+27.5,25,30,Passover Pumpkin Muffins,350
+22.5,20,25,Fresh Fig Oatmeal Muffins,350
+16.5,15,18,Plantain Corn Muffins,350
+262.5,350,175,Jo Jo's Favorite Banana Muffins,NA
+20,18,22,Vegan Blueberry Muffins,350
+22.5,20,25,Pumpkin Muffins with a Twist,350
+22.5,20,25,Cornbread Muffins I,400
+30,NA,NA,Jumbo Fluffy Walnut Apple Muffins,375
+20,NA,NA,B Muffins,400
+17.5,15,20,Carrot Sweet Potato Muffins,350
+22.5,20,25,Gluten-Free Teff Muffins,400
+20,NA,NA,Fresh Pear-Almond Muffins,350
+20,NA,NA,Pumpkin Yogurt Raisin Muffins,375
+17.5,15,20,Superfood Blueberry Muffins,350
+375,NA,NA,Strawberry Muffins,375
+282.5,375,190,Morning Glory Muffins II,375
+375,NA,NA,Maple Walnut Muffins,375
+19,18,20,Strawberry Cinnamon Oatmeal Muffins,425
+18,NA,NA,Scrumptious Bran Muffin,400
+27.5,25,30,Sweet Corn Muffins with Real Corn,350
+15,NA,NA,Kim's Virtuous Mini Pumpkin Muffins,375
+322.5,425,220,Six Week Bran Muffins,NA
+25,NA,NA,Peach Muffins,400
+350,NA,NA,Delightful Apple Spice Muffins,NA
+NA,NA,NA,Cinnamon Muffin in a Mug,NA
+350,NA,NA,Orange Oatmeal Muffins,350
+17.5,15,20,Bacon Cheese Muffins,400
+27.5,25,30,Sausage and Sweet Corn Muffins,375
+262.5,350,175,Pecan Pie Muffins,350
+22.5,20,25,Sweeter Muffins,400
+25,NA,NA,White Chocolate Cranberry Pumpkin Muffins,350
+22.5,20,25,Chocolate Banana Muffins,350
+21,20,22,Healthy Strawberry Muffins,400
+15,NA,NA,Easy Cheeseburger Mini Muffins,425
+25,NA,NA,Carrot Oatmeal Muffins,350
+19,18,20,Delicious Gluten-Free Blueberry Corn Muffins,400
+22.5,20,25,Sugar-Coated Muffins,400
+30,25,35,Mango Blueberry Muffins With Coconut Streusel,375
+30,NA,NA,Lactose-Free Banana and Blueberry Muffins,375
+25,NA,NA,Best Ever Muffins,400
+15,NA,NA,Apricot Muffins,400
+25,20,30,Best Ever Corn Muffins,375
+22.5,20,25,Whole Wheat Muffins,400
+25,NA,NA,Healthy Pumpkin Cranberry Muffins,375
+19,18,20,Blueberry Oat Muffins,400
+25,NA,NA,Apple Cinnamon Zucchini Muffins,350
+35,30,40,Pumpkin Quinoa Muffins,375
+17.5,15,20,Paleo Coconut Muffins,400
+20,NA,NA,Smoothie Breakfast Muffins,375
+13,NA,NA,Eggless Peanut Butter Chocolate Muffins,400
+18,NA,NA,Probiotic Chocolate Chocolate Chip Muffins,400
+25,NA,NA,Jacky's Fruit and Yogurt Muffins,350
+10,NA,NA,Mini Pumpkin Muffins with Orange Drizzle,NA
+15,NA,NA,Huckleberry Muffins,400
+27.5,25,30,Blueberry Streusel Muffins,375
+18,NA,NA,Savory Sweet Potato Muffins with Bacon,350
+20,18,22,Apple Pumpkin Muffins,350
+35,NA,NA,Better Morning Glory Muffins,350
+22.5,20,25,Orange Muffins,400
+282.5,375,190,Butter Tart Muffins,375
+24,22,26,Fudgey Peanut Butter Chip Muffins,350
+22.5,20,25,Pineapple Zucchini Muffins,325
+22.5,20,25,Vanilla Pear Muffins,350
+22.5,20,25,Pumpkin Apple Muffins,375
+25,NA,NA,Oh My Gosh Muffins,350
+20,NA,NA,Quick and Easy Oatmeal Muffins,400
+16.5,15,18,Buttermilk Oatmeal Muffins,400
+17.5,15,20,Super Duper Zucchini Muffins,350
+17.5,15,20,Bran Muffins a la Brian,400
+19.5,18,21,White Raspberry Muffins,400
+19,18,20,Lemon Cranberry Muffins,400
+17.5,15,20,Easy-for-Kids Chocolate Muffins,350
+300,400,200,Bran Muffins II,400
+15,NA,NA,Gritty Banana Mango Corn Muffins,400
+22.5,20,25,Banana Prune Muffins,350
+25,NA,NA,Quinoa Muffins with Peaches and Pecans,350
+26.5,25,28,Healthy Banana Cranberry Muffins,350
+20,NA,NA,Judy's Pumpkin Muffins,350
+18,NA,NA,Basic Buttermilk Muffins,375
+20,NA,NA,Blackberry Muffins,400
+262.5,350,175,Chocolate Zucchini Muffins,350
+22.5,20,25,Banana Nut Muffins,350
+16.5,15,18,Dietetic Banana Nut Muffins,375
+20,NA,NA,Moist Banana Streusel Muffins,375
+22.5,20,25,Easy Apple Cinnamon Muffins,400
+5,NA,NA,Jordan Marsh Style Blueberry Muffins,375
+400,NA,NA,Cranberry Muffins,400
+20,NA,NA,Banana Blueberry Muffins with Lavender,400
+375,NA,NA,Bran Muffins I,375
+22.5,20,25,Surprise Muffins,425
+15,NA,NA,Sinfully Moist Banana Muffins,350
+17,16,18,Yummy Bran Muffins,375
+20,NA,NA,Vegan Apple Carrot Muffins,375
+25,20,30,Irresistible Double Chocolate Muffins,400
+15,NA,NA,Best Yet Banana Mini Muffins,375
+16.5,15,18,Banana Chip Muffins II,400
+22.5,20,25,Quick Cranberry Pumpkin Muffins,350
+20,NA,NA,Cranberry Sauce Muffins,400
+27.5,25,30,Thanksgiving Muffins,350
+22.5,20,25,Krissy's Best Ever Corn Muffins,400
+20,NA,NA,Fresh Cherry Muffins,400
+17.5,15,20,Sugarless Fruit Nut Muffins,350
+17,16,18,Decadent Pumpkin Muffins,350
+20,NA,NA,Lemon Zucchini Muffins,400
+20,NA,NA,Strawberry Cheesecake Muffins,375
+NA,NA,NA,Portuguese Muffins - Bolo Levedo,NA
+19,18,20,Beth's Peach-Nectarine Muffins,400
+30,25,35,Banana Oatmeal Muffins,325
+22.5,20,25,Apple Carrot Muffins,400
+15,NA,NA,Beer Muffins,350
+20,NA,NA,Blueberry Banana Coconut Flax Muffins,350
+20,NA,NA,Blueberry Cornmeal Muffins,375
+20,NA,NA,Gingerbread-Pear Muffins,375
+400,NA,NA,Eggless Whole Wheat Muffins,400
+22.5,20,25,Pumpkin Nut Muffins,350
+20,NA,NA,Napoleon's Banana Muffin,375
+18,NA,NA,Saskatoon Berry Oat Muffins,350
+22.5,20,25,Five Spice Muffins,350
+20,NA,NA,Date Flecked Orange Muffins,400
+15,NA,NA,Perfect Butternut Squash Muffins,400
+22.5,20,25,Awesome Blueberry Muffins,400
+25,20,30,Irish Soda Bread Muffins,400
+25,20,30,October Oatmeal Pumpkin Muffins,375
+25,NA,NA,Most Requested Banana Chocolate Chip Muffins,350
+22.5,20,25,Gingerbread Muffins,350
+20,NA,NA,Mormon Muffins,375
+22.5,20,25,Muesli-Applesauce Muffins,375
+19.5,19,20,Persimmon Muffins,400
+27.5,25,30,Simple Pina Colada Muffins,350
+37.5,35,40,Savory Zucchini Muffins,375
+22.5,20,25,Bumbleberry Muffins,325
+15,NA,NA,Acorn Muffin,350
+22.5,20,25,Banana Walnut Cranberry Muffins,350
+20,NA,NA,Pineapple Upside-Down Muffins,400
+22.5,20,25,"Carrot, Apple, and Zucchini Muffins",350
+22.5,20,25,Healthier To Die For Blueberry Muffins,400
+27.5,25,30,Sweet-Potato Muffins,350
+22.5,20,25,Pineapple Ricotta Muffins,400
+20,NA,NA,Easy Monkey Bread Muffins,350
+12,11,13,Bran Muffins with Applesauce,400
+27.5,25,30,Perfect Pumpkin Muffins,350
+25,NA,NA,Plum Muffins,350
+22.5,20,25,French Breakfast Muffins,350
+20,NA,NA,Deep Dark Old Recipe Bran Muffins,350
+25,NA,NA,Gluten Free Blueberry Muffins,375
+27.5,25,30,Gluten-Free Pumpkin Muffins,350
+22.5,20,25,Fruit Muffins,400
+20.5,18,23,Banana and Persimmon Cinnamon Muffins,375
+22.5,20,25,Lemon Crumb Muffins Recipe,350
+25,NA,NA,Drunk Monkey Muffins,350
+27.5,25,30,Mulberry Muffins,400
+21,20,22,Cinnamon Streusel Orange Muffins,350
+22.5,20,25,Easy Jam Muffins,400
+20,NA,NA,Rhubarb Crisp Muffins,350
+15,NA,NA,Date Muffins,400
+13.5,12,15,Seaweed Muffins,350
+11,10,12,Mini Southwestern Corn Pup Muffins with Fiesta Dipping Sauce,400
+17,16,18,Banana Strawberry Muffins,350
+19,18,20,Cannoli Muffins,350
+20,NA,NA,Doughnut Muffins,375
+25,NA,NA,Teff Muffins,400
+22.5,20,25,Green Power Muffins,350
+17.5,15,20,Spiced Pumpkin Molasses Muffins,400
+20,NA,NA,Raspberry Lemonade Stevia Muffins,375
+27.5,25,30,Pumpkin-Banana-Oat Muffins,350
+270,350,190,Butter Tart Muffins with Raisins,350
+22.5,20,25,Moist Cranberry Pecan Muffins,375
+27.5,25,30,Apple Streusel Bran Muffins,375
+22.5,20,25,Streusel-Topped Muffins,400
+13.5,12,15,Chocolate-Banana Muffins,350
+22.5,20,25,Cute Cranberry Tangerine Muffins,375
+22.5,20,25,Sugar and Spice Muffins,350
+25,NA,NA,"Summer Peach, Basil & Cheddar Muffins",350
+35,30,40,Chocolate Beet Muffins,350
+25,NA,NA,Best Lactose Free Blueberry Muffins,375
+25,NA,NA,Fresh Cranberry Muffins,350
+19,18,20,Cheddar Cheese Muffins,400
+20,NA,NA,Berry Oatmeal Muffins,400
+19,18,20,Blueberry Oatmeal Chia Seed Muffins,375
+350,NA,NA,Berry Lemon Muffins,350
+25,NA,NA,Christmas Morning Casserole Muffins,350
+17.5,15,20,White Chocolate Pumpkin Spice Muffins,375
+17.5,15,20,Chocolate Chip Banana Muffins,425
+22.5,20,25,Delicious Sweet Potato Muffins,350
+25,NA,NA,Farm Fresh Zucchini Cranberry Nut Muffins,375
+17,NA,NA,Spiced Zucchini Carrot Muffins,350
+40,NA,NA,Chia Seed Muffins,300
+20,NA,NA,Light Pumpkin Chocolate Chip Muffins,350
+20,NA,NA,Lemon Verbena-Blueberry Muffins,400
+17.5,15,20,Strawberry Oat Muffins,375
+20,NA,NA,Banana and Flax Seed Muffins,350
+15,NA,NA,Mini Chocolate Chip Pumpkin Muffins,325
+18,NA,NA,Blueberry Nut Oat Bran Muffins,400
+22.5,20,25,Oatmeal-Banana Muffins,350
+25,NA,NA,Carrot Pulp Muffins,350
+11,10,12,Honey-Pecan Mini Muffins,425
+23.5,22,25,Gluten-Free Banana Walnut Chia Muffins,350
+25,20,30,Shannon's Banana Coconut Muffins,350
+25,NA,NA,Chocolate Chip Banana Nut Muffins,325
+25,NA,NA,Marvelous Mini Mexican Quiches,350
+20,NA,NA,Pumpkin Spinach Toddler Muffins,350
+25,NA,NA,Butternut Squash and Cranberry Muffins,350
+20,NA,NA,Molasses Bran Muffins,375
+27.5,25,30,Whole Wheat Blueberry Beet Muffins,350
+22.5,20,25,Bright Day Banana Muffins,350
+19,18,20,Almond Coconut Muffins,375
+22.5,20,25,Berry-Blue Corn Muffins,400
+22.5,20,25,Pumpkin Spice Coffee Muffins,325
+15,NA,NA,Brown Sugar Instant Oatmeal Muffins,400
+27.5,25,30,Hearty Whole Grain Muffins,350
+10,NA,NA,Kabocha Squash Mini Muffins,350
+25,NA,NA,"Apple, Carrot, and Chia Muffins",350
+18,NA,NA,Chocolaty Beet Muffins,400
+22.5,20,25,Pumpkin Spelt Muffins,350
+22.5,20,25,Molasses Spice Muffins,350
+11.5,11,12,Spicy Cornbread Mini-Muffins,425
+3,NA,NA,Poppy Seed Muffins,350
+19,18,20,Lighter Banana Crumb Muffins,375
+22.5,20,25,Healthy Strawberry Banana Muffins,375
+25,NA,NA,Tuxedoville's Rhubarb Muffins,350
+20,18,22,Chocolate Pumpkin Muffins,350
+19,18,20,Ginger Pear Muffins,400
+25,NA,NA,Apple Cinnamon Muffins,400
+17,NA,NA,Multigrain Muffins,450
+22.5,20,25,Lighter Banana Muffins,350
+22.5,20,25,White Chocolate Chip Muffins,400
+17.5,15,20,Banana Muffins I,350
+30,NA,NA,Quinoa Squash Muffins,375
+17.5,15,20,"Yogurt, Banana, and Pear Muffins",325
+35,NA,NA,Carrot Pulp and Pineapple Muffins,350
+22.5,20,25,Apple-Oatmeal Muffins,350
+32.5,30,35,Pumpkin-Chocolate Muffins,375
+16.5,15,18,Cornbread-Jalapeno Muffins,400
+18.5,17,20,Chocolate Spelt Muffins,350
+12,NA,NA,Miniature Apple Muffins,400
+17.5,15,20,Avocado Banana and Walnut Muffins,375
+25,NA,NA,Blueberry Skyr Muffins,350
+15,NA,NA,Eggnog Rum Muffins,400
+15,NA,NA,Pumpkin Muffins,350
+22.5,20,25,Mocha Muffins,400
+18,NA,NA,Great Apple and Carrot Muffins,350
+22.5,20,25,Easy Honey Cornbread Muffins,400
+22.5,20,25,Cappuccino Muffins with Chocolate and Cranberries,375
+24,22,26,Edna's Banana Cranberry Muffins,350
+20,18,22,"Apple, Carrot, and Ginger Muffins",350
+20,NA,NA,Chocolate Espresso Banana Muffins,350
+33,NA,NA,"Spam®, Cheese, and Spinach Muffins",350
+302.5,400,205,Banana Chip Muffins I,400
+35,NA,NA,Quick Vegan Blueberry Muffins,350
+19,18,20,Pomegranate White Chocolate Muffins,350
+20,NA,NA,Caramel Banana Poke Muffins,350
+27.5,25,30,"Cranberry Jalapeno ""Cornbread"" Muffins",325
+17,NA,NA,Sweet Potato Protein Muffins,375
+23,NA,NA,Vegan Banana Nut Muffins,375
+19,18,20,Applesauce Raisin Muffins,375
+20,NA,NA,Healthier Fresh Strawberry Muffins,400
+16,15,17,Banana Choco-Coconut Muffins,350
+25,20,30,Healthy Vegan Morning Muffins,350
+25,NA,NA,White Chocolate-Lime Muffins,350
+18,NA,NA,Banana Breakfast Muffins,400
+9.5,7,12,Cinnamon-Pecan Muffins,375
+17,16,18,Bran Cereal Fruit Muffins,400
+10,NA,NA,Light Apple Stuffing Muffins,400
+25,NA,NA,Whole Wheat Strawberry Muffins,375
+21,20,22,Sourdough Blueberry Muffins,375
+35,30,40,Vegan Strawberry Muffins,350
+13,NA,NA,Carrot-Walnut Muffins,425
+19,18,20,Delicious Blackberry Muffins,450
+32.5,30,35,World's Best Lemon Blueberry Muffins,350
+25,NA,NA,Peach and Cranberry Muffins,375
+17.5,15,20,Applesauce Bran Muffins,375
+18,NA,NA,Delicious Vegan Spelt Muffins,350
+27.5,25,30,Honey Nut Fruit Muffins,350
+22.5,20,25,Fresh Strawberry Muffins,400
+20,18,22,Apple Cider Streusel Muffins,400
+20,NA,NA,Avocado-Banana-Walnut Muffins,350
+17.5,15,20,Cranberry-Orange Muffins,375
+27.5,25,30,Poppy Seed and Banana Muffins,350
+19,18,20,Whole Wheat Banana Oat Muffins,400
+22.5,20,25,Jay's Blueberry Corn Muffins,400
+22.5,20,25,Glazed Lemon Blueberry Muffins,375
+27,26,28,Ricotta-Blueberry Muffins,350
+22.5,20,25,Cheesy Kale Muffins,375
+52.5,50,55,Vegan Zucchini Bread Muffins,350
+262.5,350,175,Fudgy Chocolate Chip Muffins,350
+21,18,24,Pumpkin Spice Zucchini Muffins,350
+17,16,18,Healthy Banana Chocolate Chip Oat Muffins,400
+21.5,20,23,Delicious Vegan Pumpkin Muffins,400
+20,NA,NA,Cran-Orange Oatmeal Muffins,350
+20,NA,NA,Coconut Coffee Muffins,400
+18,NA,NA,Vegan Date Sweet Potato Muffins,350
+27.5,25,30,Sticky Pecan Muffins,350
+20,NA,NA,Chocolate Chip and Blueberry Muffins,375
+25,20,30,Blueberry Crumb Muffins,375
+19,18,20,Lemon Cranberry Whole Wheat Muffins,400
+13.5,12,15,Quinoa High Protein Muffins,350
+19,18,20,Blueberry Banana Nut Muffins,400
+20,NA,NA,Gingerbread S'mores Muffins,325
+13.5,12,15,Oatmeal Breakfast Muffins,425
+21,19,23,Marbled Chocolate-Pumpkin Muffins,350
+375,NA,NA,Orange Spice Muffins,NA
+15,NA,NA,Almond Flour Lemon Muffins,350
+20,NA,NA,Cranberry Oatmeal Muffins,400
+19,18,20,Blueberry Bran Muffins,400
+19,18,20,Carrot Cake Muffins,375
+19,18,20,Fresh Cherry Lemon Muffins,400
+10.5,9,12,Jeweled Pancake Muffins - Puffins,350
+20,NA,NA,Healthy and Delicious Kiwi Muffins,350
+15,NA,NA,Cheesy Asparagus Caper Muffins,425
+NA,NA,NA,Air Fryer Blueberry Muffins,340
+22.5,20,25,Banana-Walnut Muffins,350
+15,NA,NA,Zestos' Chickpea and Grape Muffins,400
+15,NA,NA,Refrigerator Bran Muffins,350
+20,NA,NA,Holiday Mincemeat Muffins,400
+20,NA,NA,Blueberry Streusel Muffins with Yogurt,375
+22.5,20,25,Easy Oatmeal Muffins,425
+20,NA,NA,Savoury Beet Muffins,350
+40,NA,NA,Texas Lime in the Coconut Muffins,350
+19,18,20,Tropical Zucchini Carrot Muffins,350
+20,NA,NA,Wild Blackberry Muffins,400
+15,NA,NA,Almond Banana Chocolate Muffins,400
+22.5,20,25,Almond-Poppy Seed Muffins,350
+350,NA,NA,Date Oat Muffins,350
+15,NA,NA,Banana Blueberry Almond Flour Muffins (Gluten-Free),350
+20,NA,NA,Tasty Orange-Oatmeal Muffins,400
+27.5,25,30,Rice Zucchini Muffins,350
+10,8,12,Mother's Pecan Pancake Muffins,350
+35,NA,NA,Nutty Yogi Banana Muffins,350
+22.5,20,25,Banana Cranberry Nut Muffins,350
+20,NA,NA,Butternut Squash Pecan Muffins,350
+16,15,17,High-Fiber Breakfast Muffins,400
+22.5,20,25,Steel-Cut Oat Muffins,350
+17.5,15,20,Whole Grain Banana Muffins,400
+13.5,13,14,Cheesy Grain-Free Protein Muffins,350
+25,20,30,Rhubarb Muffins I,375
+22.5,20,25,Vanilla-Pear Muffins,350
+23.5,22,25,Chocolate-Ricotta Muffins,350
+17.5,15,20,"Blueberry, Lime, and Basil Muffins",375
+17,NA,NA,Easy Whole Wheat Banana Muffins,350
+30,NA,NA,Oat Applesauce Muffins,375
+22.5,20,25,Pina Colada Muffins,375
+22,NA,NA,Cherry Cobbler Muffins,375
+21.5,18,25,Nutty Raspberry Chocolate Muffins,400
+22.5,20,25,Jumbo Whole Wheat Blueberry Muffins,350
+17.5,15,20,Sprinkles Muffins,375
+25,NA,NA,Cantaloupe Muffins with Praline Topping,350
+22.5,20,25,Apple Crisp Muffins,400
+20,NA,NA,Chocolate Sponge Cake Muffins,375
+18,NA,NA,Greek Yogurt Poppy Seed Muffins,375
+27.5,25,30,Low-Fat Apple Spice Muffins,350
+21,20,22,Blueberry Delight Muffins,350
+20,NA,NA,Chive and Dill Muffins,425
+20,NA,NA,Blueberry Muffins on Steroids,400
+25,20,30,Coffee Cake Muffins,375
+11,10,12,Lemony Banana Crumb Muffins,400
+22.5,20,25,Hot Buttered Rum Muffins,375
+11,10,12,Mini Pecan Pie Muffins,350
+32.5,30,35,"Vegan Date, Walnut, and Zucchini Muffins",375
+17,16,18,Apple Nut Muffins,350
+20,NA,NA,Friendship Cocoa Muffins,350
+17.5,15,20,Banana Pancake Muffins,350
+27.5,25,30,Hazelnut Chocolate Chunk Muffins,375
+30,NA,NA,Sunrise Mango-Coconut Muffins,350
+15,NA,NA,Savory Fall Corn Muffins,400
+16.5,16,17,Banana-Nut Muffins,350
+22.5,20,25,Alan's Ultimate Bran Muffins,350
+16.5,15,18,Lemon Yogurt Muffins,400
+19,18,20,Fran's Butternut Squash Muffins,350
+20,NA,NA,Coconut Mango Muffins with Candied Ginger,375
+25,NA,NA,Fresh Mango Muffins,350
+16.5,15,18,Cornbread Muffins with Cheddar Cheese,400
+25,NA,NA,Berry Cornmeal Muffins,350
+16.5,15,18,Aunt B's Peanut Butter Muffins,375
+20,NA,NA,Lemon Poppyseed Muffins with Lemon Glaze,350
+12.5,10,15,Picky Kids Healthy Banana Muffins,350
+22.5,20,25,Healthy Chocolate Morning Muffins,400
+27.5,25,30,Vegan Oat Flour Muffins,350
+350,NA,NA,Cherry Nut Muffins,350
+17.5,15,20,Fluffy Carrot Muffins with Cream Cheese Frosting,350
+57.5,55,60,Cake Mix Pumpkin Bread and Muffins,350
+18.5,17,20,Cinnamon Chip Pumpkin Mini Muffins,350
+17.5,15,20,Orange Chocolate Muffins,400
+15,NA,NA,V's Apple Bran Muffins,400
+23.5,22,25,Pumpkin Pie-Oat Flour Muffins,350
+5,NA,NA,Almond Flour Chocolate Chip Muffins,350
+22.5,20,25,Gluten Free Pumpkin Muffins,375
+302.5,400,205,Oatmeal Chocolate Chip Muffins,400
+262.5,350,175,Carrot Cream Cheese Muffins,350
+27.5,25,30,Cranberry Applesauce Muffins,350
+21,NA,NA,Best Leftover Cranberry Sauce Muffins,400
+22.5,20,25,Chocolate Filled Muffins,400
+32.5,30,35,Paleo Blueberry Lemon Muffins,350
+20,NA,NA,Sweet Potato Muffins with Pecan Streusel,375
+25,NA,NA,Actually Healthy Morning Glory Muffins,350
+25,NA,NA,Raspberry Almond Muffins,350
+350,NA,NA,Mennonite Orange Muffins,350
+300,400,200,Bacon Cheddar Chive Muffins,400
+19,18,20,Fennel Corn Muffin,375
+15,NA,NA,Happy Apple Zucchini Muffins,350
+350,NA,NA,Bran Muffins III,350
+17.5,15,20,Oatmeal Apple Muffins,NA
+20,NA,NA,Bear's Spinach Muffins,350
+16.5,15,18,Brown Butter Oatmeal Muffins,375
+28,NA,NA,Jumbo Sour Cream Blueberry Muffins,400
+20,NA,NA,Diabetic-Friendly Coconut Muffins,400
+16.5,15,18,Maple Brown Sugar Oatmeal Muffins,350
+30,NA,NA,Low-Carb Keto Breakfast Muffins,350
+21,20,22,Vegan Lemon-Poppy Seed Muffins,350
+19,18,20,Raspberry-White Chocolate Chip Muffins,400
+15,NA,NA,Paleo and Vegan Sunflower Banana Muffins,400
+15,NA,NA,Whole Wheat Huckleberry Crumb Muffins,350
+22.5,20,25,Apple Cinnamon Cream Cheese Muffins,375
+22.5,20,25,Banana-Date Muffins,400
+400,NA,NA,Jam Muffins,400
+22.5,20,25,Pumpkin Gut Chocolate Chip Muffins,350
+27.5,25,30,Gluten-Free Zucchini Carrot Muffins,375
+27.5,25,30,Banana Almond Chocolate Chip Muffins,350
+19,18,20,Blueberry Peach Muffins,400
+22.5,20,25,Easy Pumpkin Cinnamon Chip Muffins,350
+12.5,10,15,Vegan Corn Muffins,450
+30,NA,NA,Delish Coconut Muffins,375
+22.5,20,25,Carrot Cake Muffins with Cinnamon Glaze,375
+25,NA,NA,Emily's Famous Banana Oat Muffins,350
+25,NA,NA,One-Bowl Carrot Oat Muffins,350
+17.5,17,18,Zucchini-Lemon-Poppy Seed Muffins,350
+13.5,12,15,Cornmeal Millet Poppy Seed Muffins,400
+20,NA,NA,Mimi's Giant Whole-Wheat Banana-Strawberry Muffins,375
+282.5,375,190,Apple Bran Muffins,375
+18,17,19,Carrot-Apple Muffins,350
+15,NA,NA,Golden Coconut Almond Muffins,400
+19,18,20,Best Oatmeal Muffins,400
+17.5,15,20,Banana-Blueberry Muffins with Greek Yogurt,400
+NA,NA,NA,Microwave Blueberry Muffin in a Mug,NA
+22.5,20,25,Whole Wheat Date Nut Muffins,375
+27.5,25,30,Pumpkin Blueberry Cashew Chocolate Muffins,375
+30,NA,NA,Vegan Zucchini Banana Bread Muffins,350
+282.5,375,190,Strawberry Rhubarb Muffins,375
+15,NA,NA,Babs' Lemon Poppy Seed Muffins,350
+25,NA,NA,Diabetic-Friendly Apple Muffins,400
+17.5,15,20,Pizza Muffins,375
+25,NA,NA,Vegan Orange Chocolate Oatmeal Muffins,375
+20,NA,NA,Coconut Flour Banana Nut Muffins,350
+30,NA,NA,Deliciously Moist Pineapple Muffins,350
+22.5,20,25,Laura's Gluten- and Dairy-Free Pumpkin Muffins,375
+20,NA,NA,Irish Whiskey Muffins,375
+25,NA,NA,Vegan Zucchini Carrot Muffins with Applesauce,375
+NA,NA,NA,"Easy, Fast Chocolate Cup Muffin",NA
+25,NA,NA,Green Tea Muffins,350
+15,NA,NA,Whole Grain Carrot Peach Muffins,350
+425,NA,NA,Cheddar Muffins,NA
+15,NA,NA,Easy Brown Sugar Muffins,350
+19,18,20,Whole Wheat and Nuts Muffins,375
+6.5,6,7,Delicious and Nutritious Whole Wheat Banana and Blueberry Muffins,350
+25,NA,NA,Lower-Carb Banana Protein Muffins,350
+25,NA,NA,Apple Bran Muffins from Mott's®,350
+22.5,20,25,Allergen-Free Raisin-Carrot Muffins,350
+20,NA,NA,High-Fiber Maple Brekkie Muffins,375
+25,NA,NA,Strawberry-Blueberry Muffins,375
+19,18,20,Gluten-Free Banana Oatmeal Muffins,400
+400,NA,NA,Cherry Vanilla Chip Muffins,400
+15,NA,NA,Wine Cooler Muffins,350
+20,NA,NA,Pumpkin Spice Healthy Bran Muffins,400
+22.5,15,30,Chocolate Chip Carrot Cake Muffins,350
+27.5,25,30,Calypso Muffins,375
+13.5,12,15,Sweet Butternut Squash Muffins,350
+20,NA,NA,Cranberry Orange Muffins with Truvia® Baking Blend,375
+25,NA,NA,Savory Quinoa Muffins (Gluten-Free),350
+20,NA,NA,Black and Blueberry Muffins,400
+28,26,30,Bran-Gingerum Muffins,350
+22.5,20,25,Breakfast Muffins,400
+25,NA,NA,Gluten-Free Choc Chip Oatmeal Muffins,350
+27.5,25,30,Caramelized Oatmeal Raisin Muffins,375
+20,NA,NA,Betsy's Best Gluten-Free Muffins,400
+22.5,20,25,Orange Raisin Muffins,400
+22.5,20,25,Chocolate Chocolate Chip Nut Muffins,350
+20,NA,NA,Gluten-Free Cherry Cobbler Muffins,375
+20,NA,NA,Best 100 Calorie Blueberry Muffins,400
+17.5,15,20,Orange Date Muffins,350
+20,NA,NA,Double Oat Raisin Poppyseed Muffins,400
+22.5,20,25,Blueberry Cream Cheese Muffins,375
+22.5,20,25,Ice Cream Muffins,425
+13.5,12,15,Sour Cream Muffins,400
+19,18,20,Maple Muffins,400
+25,NA,NA,Sour Cream Coffee Cake Muffins,375
+20,NA,NA,Applesauce Orange Poppyseed Muffins,350
+20,NA,NA,Yummy Peanut Butter Apple Muffins,350
+375,NA,NA,Old-Fashioned Sally Lunn Muffins,NA
+20,NA,NA,Applesauce-Oat Muffins,400
+17.5,15,20,"Toasted Oat Muffins with Apricots, Dates, and Walnuts",400
+30,NA,NA,Awesome Apple Muffins,350
+282.5,375,190,Coffee Praline Muffins,375
+15,NA,NA,Plum Oat Muffins,375
+25,23,27,Healthy Protein Morning Glory Muffins,350
+20,18,22,Cranberry Apple Breakfast Muffins,350
+30,NA,NA,Delicious Banana Vegan Muffins (Sugar Free),350
+400,NA,NA,Chocolate Chocolate Chip Muffins,400
+30,NA,NA,"White Chocolate, Fruit, and Spice Muffins",375
+30,NA,NA,Banana Coconut Flaxseed Muffins with Apple and Chia,350
+22.5,20,25,Applesauce Muffins,350
+22.5,20,25,Strawberry Poppy Seed Cream Cheese Muffins,375
+19,18,20,Bran Muffins with Coffee,375
+18.5,17,20,GF Chocolate Chip Greek Yogurt Muffins,350
+20,NA,NA,Gluten-Free Pumpkin Chocolate Chip Muffins,350
+22.5,20,25,Whole Wheat Pumpkin Coffee Cake Muffins,350
+15,NA,NA,Apple Lemon with Cinnamon Muffins,425
+27.5,25,30,Banana Mango Muffins with Lime Glaze,350
+22.5,20,25,Lemon Muffins,400
+19,18,20,Florida Strawberry Muffins,425
+22.5,20,25,Pear-a-dise Muffins,375
+20,NA,NA,Low-Cholesterol Blueberry Muffins II,400
+NA,NA,NA,Savory Breakfast Muffins,375
+19,18,20,Dairy-Free Breakfast Blueberry Cheesecake Muffins,400
+19,18,20,Healthy Whole Wheat Spiced Pumpkin Muffins,350
+20,NA,NA,Skinny Pumpkin Spice Muffins with Walnut Streusel,350
+40,NA,NA,Gluten-Free Vegan Banana Bread Muffins,350
+15,NA,NA,Cornbread Muffins II,450
+20,NA,NA,Fall Apple Cider Muffins,350
+10,8,12,"Savory Sausage, Cheese and Oat Muffins",400
+30,NA,NA,Wicked Whole Wheat Orange Carrot Muffins,350
+15,NA,NA,Vegan Vegetable Muffins,375
+27.5,25,30,Low-Fat Vegan Pumpkin Chocolate Chip Muffins,375
+27.5,25,30,Lemon Honey Muffins,375
+322.5,425,220,Oatmeal Blueberry Muffins,425
+22.5,20,25,Peanut Butter Chocolate Chip Zucchini Muffins,350
+22.5,20,25,Savory Lower-Carb Butternut Squash Muffins,325
+NA,NA,NA,Low-Carb Coconut Flax Mug Muffins,NA
+16,15,17,Paleo(ish) Pumpkin Walnut Muffins,400
+12,NA,NA,Easy Pancake Mix Muffins with Pumpkin and Ginger,450
+27.5,25,30,Cinnamon Bran Muffins,375
+15,NA,NA,Low-Fat Chocolate Zucchini Mini Muffins,350
+22.5,20,25,Carrot Spice Muffins,400
+25,NA,NA,Carrot Morning Glory Muffins (Gluten Free Optional),400
+20,NA,NA,Healthy Pumpkin Zucchini Muffins,375
+37.5,35,40,Banana Chocolate Meal-in-a-Muffin,350
+20,NA,NA,Pineapple Muffins,350
+18,NA,NA,Lemon Poppy Seed Muffins with Truvia® Baking Blend,400
+20,NA,NA,Healthier Deep Dark Old Recipe Bran Muffins,350
+15,NA,NA,Orange Juice Muffins with Honey Spread,400
+17.5,15,20,Oatmeal Maple Syrup Muffins,375
+22.5,20,25,Vegan Banana Blueberry Muffins,350
+18,NA,NA,Dark Carrot Raisin Muffins,400
+12.5,12,13,Whole Wheat Carrot-Raisin Muffins,350
+17,NA,NA,"Maple Pecan Muffins (Vegan, Gluten-Free, Dairy-Free)",350
+32.5,30,35,Savory Cheddar Zucchini Muffins,350
+17,16,18,Low Fat Apple Bran Muffins,350
+30,NA,NA,Barb's Pumpkin Chocolate Chip Muffins,350
+30,NA,NA,Chef John's Popovers,450
+12.5,10,15,Strawberry Nut Muffins,350
+15,NA,NA,No-Sugar-Added Blueberry and Banana Wheat Muffins,350
+30,NA,NA,Bran Flakes Muffins with Raisins,400
+15,NA,NA,Savory Corn Muffins,NA
+25,NA,NA,Strawberry Lemon Muffins,375
+30,NA,NA,Honey Wheat Muffins,350
+282.5,375,190,Apple Bran Cheddar Muffins,375
+20,NA,NA,Spiced Butternut Squash Muffins,400
+20,NA,NA,Rhubarb Muffins II,325
+22.5,20,25,"Eggless Blueberry Muffins with Applesauce, Almond Milk, and Almond Flour",375
+15,NA,NA,"Raspberry Orange Muffins (Gluten Free, Dairy Free, Vegan)",350
+17.5,15,20,Chocolate Chip Muffins II,350
+17.5,15,20,Chocolate Raisin Oatmeal Muffins,400
+15,NA,NA,Spiced Peach Oatmeal Muffins,400
+25,NA,NA,Strawberry Lemonade Muffins,375
+27.5,25,30,Carrot Muffins,400
+25,NA,NA,Fabulous Fargozas,425
+30,NA,NA,Delicious Pineapple Muffins,375
+14,13,15,Chocolate Chip Muffins with Applesauce,375
+20,NA,NA,Chocolate Chip Cream Cheese Muffins,400
+27.5,25,30,Pumpkin Tarts,350
+8,NA,NA,Corn Dog Bites,425
+20,NA,NA,Almond Flour Blueberry Muffins (Gluten Free),350
+25,NA,NA,Alienated Blueberry Muffins,375
+NA,NA,NA,Lemon Poppy Seed Muffins II,400
+17,16,18,Gluten-Free Blueberry Muffins made with Coconut Flour,400
+282.5,375,190,Pumpkin Muffins I,375
+17.5,15,20,Chocolate Chip Muffins I,350
+22.5,20,25,Applesauce Wheat Blueberry Muffins,375
+32.5,30,35,Brunch Cream Cheese Muffins,350
+302.5,400,205,Spiced Apple Muffins,400
+17.5,15,20,Apple Crisp Cups,350
+16,NA,NA,Protein Pumpkin Muffins,350
+400,NA,NA,Lemon Poppy Seed Muffins I,400
+22.5,20,25,Nora's Special Chocolate Chip Muffins,400
+300,400,200,Chocolate Chip Sourdough Muffins,400
+18,NA,NA,Peanut Butter Banana Muffins,375
+21,20,22,Fat Free Mini Prune Honey Muffins,375
+375,NA,NA,Zucchini Muffins,375
+262.5,350,175,Coconut Muffins,NA
+20,NA,NA,"Get-Up-and-Go Muffins with Greek Yogurt, Oatmeal, and Blueberries",350
+32.5,30,35,Easy and Delicious Crusty Popovers,350
+25,NA,NA,Muffin Tin Potatoes Gratin,400
+16.5,15,18,Easy Miniature Pumpkin Pies,425
+20,NA,NA,Quick and Easy Apple Muffins,400
+27.5,25,30,Choice Apple and Banana Muffins,350
+16,NA,NA,Banana Blueberry Muffins,350
+9,8,10,Dianne's Pumpkin Cookie Cups,400
+30,NA,NA,Strawberry Rhubarb Miniature Tarts,350
+20,NA,NA,Dinner Rolls Made With Healthy Coconut Oil,375
+20,NA,NA,Whole Wheat Apple Muffins,375
+27.5,25,30,Very Berry Muffins,425
+16.5,15,18,Freshly Fresh Strawberry Muffins,350
+22.5,20,25,Buttermilk Cornbread Muffins,375
+25,NA,NA,Sticky Date Pudding,350
+20,NA,NA,Easy Blueberry Muffins I,400
+27.5,25,30,Pumpkin Spice Muffins,350
+22.5,20,25,French Breakfast Puffs,350
+20,NA,NA,Monkey Bread Made Easy,400
+25,NA,NA,Apple Oatmeal Breakfast Cups,350
+282.5,375,190,Banana Bran Muffins,375
+12.5,10,15,Swedish Toscas (Swedish Almond Tarts),350
+30,25,35,Brownie Cups,350
+322.5,425,220,Banana Chocolate Chip Muffins,NA
+25,NA,NA,Boston Cream Dessert Cups,350
+20,NA,NA,Gravy-Stuffed Stuffing Muffins,400
+12.5,10,15,Chocolate Cherry Coconut Scuffins,350
+10,NA,NA,Sasa's Chocolate Peanut Butter Protein Bites,400
+350,NA,NA,Pineapple Puffs,350
+13.5,12,15,Applesauce Puffs,350
+15,NA,NA,Easy Doughnut Puffs,350
+10,NA,NA,Healthy Aussie Bites™,350
+13.5,12,15,Green Egg and Ham Cups,350
+17.5,15,20,Butterfly Buns,NA
+25,20,30,Awesome Carrot Muffins,350
+27.5,25,30,Skinny Cornbread,375
+25,NA,NA,Quinoa Raisin Breakfast Bites,350
+38,NA,NA,Deb's Cloverleaf Rolls,375
+16.5,15,18,Blueberry Gems,400
+20,NA,NA,Banana Zucchini Bread Muffins,350
+30,NA,NA,Blueberry Muffin Cake,400
+NA,NA,NA,Paleo One-Minute Muffin,NA
+35,30,40,Cheeseburger Muffins,425
+22.5,20,25,Breakfast Corn Muffins,400
+NA,NA,NA,Rice Cooker Muffin Cake,NA
+NA,NA,NA,Mini Corn Dog Muffins,375
+7.5,5,10,Heart-Shaped Pancake Muffins,400
+27.5,25,30,Green Chile Corn Muffins,350
+25,20,30,Egg Quinoa Breakfast Muffins,400
+7,NA,NA,Chocolate Protein Muffins,350
+20,NA,NA,Ham and Cheddar Corn Muffins,375
+19,18,20,Honey Cornbread Muffins,400
+20,NA,NA,Sheet Pan Blueberry Muffin Tops,375
+25,NA,NA,Pub Peanut Muffins,350
+15.5,14,17,Easy Pumpkin Muffins (Low-Fat),350
+NA,NA,NA,Corn Muffin Pancakes,NA
+17.5,15,20,Pumpkin Coconut Muffins with Chocolate Chips,350
+19,18,20,Mini Bacon-Jalapeno-Onion Corn Muffins,350
+22.5,20,25,Tuna Salad Muffins,375
+50,NA,NA,Gluten-Free Zucchini Bread (or Muffins),325
+185,350,20,Quick N' Easy Coffee Cake or Muffins,350
+19,18,20,Pumpkin Cheesecake Muffins,350
+30,NA,NA,Gluten-Free Vegan Banana Chocolate Chip Muffins,350
+32.5,30,35,Vegan Apple-Nut Muffins (Gluten Free),350
+15,NA,NA,Gluten-Free Chocolate Chip Pumpkin Muffins,400
+27.5,25,30,Perfect Pear Muffins,400
+22.5,20,25,Walnut and Flax Seed Muffins,375
+17.5,15,20,Lactose-Free Apple and Cinnamon Muffins,375
+13.5,12,15,Cranberry Bran Flax Seed Muffins,375
+19,18,20,Deb's Clean-Eating Lemon-Blueberry Muffins,350
+25,NA,NA,Clean Eatin' Banana Muffins,350
+20,NA,NA,Moistest Sugar-Free Zucchini Muffins Ever,350
+19,18,20,Paleo Chocolate Chip Muffins,360
+15,NA,NA,Easy Orange Paleo Muffins,350
+20,NA,NA,Pancake Muffin Combo,350
+30,NA,NA,Protein Pumpkin Blender Muffins,375
+25,NA,NA,Pumpkin Cornbread Muffins,350
+25,NA,NA,Fudge Muffins,325
+22.5,20,25,Cranberry Chocolate Orange Muffins,375
+17.5,15,20,Gluten-Free Muffins,400
+25,NA,NA,Shana's Spaghetti Squash Muffins,400
+20,NA,NA,Anna's Banana Cacao-Nut Muffins,350
+25,NA,NA,Dandelion Blossom Muffins with Chocolate Chips,350
+13,12,14,Gluten-Free Carrot Egg White Muffins,350
+19,18,20,Banana-Oat Egg White Muffins,400
+20,18,22,Low-Fat Breakfast Muffins,400
+17.5,15,20,Vegan Rhubarb Bran Muffins,350
+25,NA,NA,Breeze Blueberry Muffins,350
+18,NA,NA,Lunch Box Cheeky Monkey Muffins,400
+20,NA,NA,Sweet Spinach Muffins,400
+21,20,22,Not-So-Sweet Spinach Muffins,350
+20,NA,NA,Squash Cornbread,375
+20,NA,NA,Kid-Friendly Whole Grain Banana Muffins,350
+5,NA,NA,Vegan Pumpkin Muffins,375
+23.5,20,27,Best Bake Sale Banana Muffins,350
+22.5,20,25,Egg and Veggie Muffins,350
+16.5,15,18,Double Chocolate Muffins,400
+27.5,25,30,Banana Brownie Muffins,350
+19,18,20,Molasses Carrot Muffins,350
+17.5,15,20,Dragon Eye Muffins,350
+21,20,22,Dairy- and Gluten-Free Zucchini Orange Chocolate Chip Muffins,350
+25,NA,NA,Amazing Vegan Pumpkin Muffins,375
+27.5,25,30,Tony V's Vegan Pumpkin Muffins,350
+30,NA,NA,Quinoa Zucchini Protein Muffins,375
+55,50,60,Fruit and Fiber Energy Muffins,350
+13,NA,NA,Golden Oatmeal Muffins,NA
+19,16,22,Strawberry Vanilla Muffins with Toasted Coconut Cream Cheese Frosting,350
+22.5,20,25,Peanut Butter Pound Cake Muffins,350
+25,NA,NA,Lychee Muffins,350
+25,NA,NA,Allergy-Friendly Green Banana Muffins,350
+20,NA,NA,Blood Orange and Pineapple Muffins,350
+20,NA,NA,Protein Brownie Bran Muffins,350
+25,22,28,Buttermilk-Oatmeal-Raisin Muffins,400
+19,18,20,Ghirardelli Double Chocolate Muffins,350
+20,NA,NA,Cran Bran Muffins,400
+9,NA,NA,Talia's Allergen-Free Banana Muffins,350
+22.5,20,25,Gluten-Free Hemp Seed-Apple Muffins,400
+18,NA,NA,Healthy Banana-Oat Muffins,350
+27.5,25,30,Easy Protein Egg White Muffins,350
+13,12,14,Vegan and Gluten-Free Matcha Raspberry Mini Muffins,350
+20,NA,NA,Vegan Sugar and Spice Muffins,350
